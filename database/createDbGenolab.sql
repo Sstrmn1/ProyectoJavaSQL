@@ -197,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `bd_genolab`.`transaccion` (
   `id_lote` INT NOT NULL,
   `id_orden` INT NOT NULL,
   `cantidad` INT NOT NULL,
-  `fecha` DATE NOT NULL,
+  `fecha` DATETIME NOT NULL,
   PRIMARY KEY (`id_transaccion`),
   UNIQUE INDEX `id_transaccion_UNIQUE` (`id_transaccion` ASC) ,
   INDEX `fk_transaccion_lote_idx` (`id_lote` ASC) ,
@@ -276,3 +276,5 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- ALTER TABLE `bd_genolab`.`transaccion` MODIFY COLUMN `fecha` DATETIME NOT NULL;
